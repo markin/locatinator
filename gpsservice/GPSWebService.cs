@@ -7,6 +7,7 @@ using System.ServiceModel;
 using System.Text;
 
 using Newtonsoft.Json;
+using System.ServiceModel.Web;
 
 namespace DataSplice.Services.GPS
 {
@@ -21,6 +22,21 @@ namespace DataSplice.Services.GPS
 
         public string Location()
         {
+            // Support CORS 
+            // See: http://dhvik.blogspot.co.uk/2011/06/supporting-cross-origin-resource.html
+            WebOperationContext.Current.OutgoingResponse.Headers.Add("Access-Control-Allow-Origin", "*");
+
+            // Identify preflight request and add extra headers  
+            if (WebOperationContext.Current.IncomingRequest.Method == "OPTIONS")
+            {
+                WebOperationContext.Current.OutgoingResponse.Headers
+                    .Add("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
+                WebOperationContext.Current.OutgoingResponse.Headers
+                    .Add("Access-Control-Allow-Headers",
+                         "Content-Type, Accept, Authorization, x-requested-with");
+                return null;
+            }
+
             StartWatcher();
             var payloadString = ToJson(ToGeoLocation(lastKnownPosition));
             if (lastKnownPosition != null)
