@@ -1,0 +1,4 @@
+**/obj/
+**/bin/
+*.InstallLog
+gpsservice.v12.suo
