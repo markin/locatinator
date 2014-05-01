@@ -69,14 +69,13 @@ namespace DataSplice.Services.GPS
                 return UnknownGeoLocation();
             }
             var location = position.Location;
-            var lat = location.Latitude;
-            var lng = location.Longitude;
             return new
             {
                 coords = new
                 {
-                    latitude = lat,
-                    longitude = lng
+                    latitude = location.Latitude,
+                    longitude = location.Longitude,
+                    accuracy = location.HorizontalAccuracy
                 }
             };
         }
