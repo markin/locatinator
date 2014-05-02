@@ -30,3 +30,5 @@ Once your windows service is running you can access the GPS data at: `http://loc
 ### Ensure The Service Starts on Boot
 
 You can do this as a script using the [Sc](http://technet.microsoft.com/en-us/library/cc990290.aspx) util. Or you can do it manually through the Windows Services panel:
+
+![Windows Services](http://i.imgur.com/RJayFhC.png)
