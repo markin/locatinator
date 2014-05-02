@@ -15,7 +15,7 @@ Using the .Net 4.5 installutil: `installUtil DataSpliceGPSService/gpsservice.exe
 
 ### Accessing the GPS data
 
-Once your windows service is running you can access the GPS data at: `http://localhost:8000/gps/location`. If all's well you should see something like:
+Once your windows service is running you can access the GPS data at: `http://localhost:8000/gps/location`. If all's well you should see something like the following JSON data (but formatted as a string):
 
 ```json
 {
