@@ -27,6 +27,15 @@ Once your windows service is running you can access the GPS data at: `http://loc
 }
 ```
 
+If your GPS sensor is unavailable you will see the following payload:
+
+```json
+{
+  "code": 2,
+  "message": "Position unavailable"
+}
+```
+
 ### Ensure The Service Starts on Boot
 
 You can do this as a script using the [Sc](http://technet.microsoft.com/en-us/library/cc990290.aspx) util. Or you can do it manually through the Windows Services panel:
