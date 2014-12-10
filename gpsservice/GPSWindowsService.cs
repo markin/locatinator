@@ -14,7 +14,7 @@ namespace DataSplice.Services.GPS
         public GPSWindowsService()
         {
             // Name the Windows Service
-            ServiceName = "DataSpliceGPSService";
+            ServiceName = "DataSplice GPS Service";
         }
 
         public static void Main()
