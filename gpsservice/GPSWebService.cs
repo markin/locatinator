@@ -33,7 +33,7 @@ namespace DataSplice.Services.GPS
                     .Add("Access-Control-Allow-Methods", "POST, OPTIONS, GET");
                 WebOperationContext.Current.OutgoingResponse.Headers
                     .Add("Access-Control-Allow-Headers",
-                         "Content-Type, Accept, Authorization, x-requested-with");
+                         "Content-Type, Accept, Authorization, x-requested-with, x-ds-sessionname");
                 return null;
             }
 
